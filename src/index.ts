@@ -2,11 +2,12 @@ import express from 'express';
 const app = express();
 app.use(express.json())//middleware que transformar el body en un json
 
+import characters from './routes/characters';
+
 const port:number = 3000;
-app.get('/ping',(_req,res)=>{
-    console.log('tamo en ping');
-    res.send('pong');
-});
+
+//Characters router
+app.use('/api/characters', characters);
 
 //inicio del server
 app.listen(port, ()=>{

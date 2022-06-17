@@ -1,6 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-router.get('/characters', (_req,_res)=>{
+router.get('/', (_req,res)=>{
+    res.send("Characters");
 
 })
+
+export default router;
